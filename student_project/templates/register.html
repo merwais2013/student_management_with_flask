@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="parent">
+	<div class="main">
+
+		<div class="signup">
+			<form method="POST">
+				{{ form.hidden_tag() }}
+				<label for="chk" aria-hidden="true">Sign up</label>
+				{{ form.full_name(placeholder="Full Name") }}
+				{{ form.email(placeholder="Email") }}
+				{{ form.phone_number(placeholder="Phone Number") }}
+				{{ form.password(placeholder="Password") }}
+				{{ form.confirm_pass(placeholder="Confirm Password") }}
+					{{ form.submit(class="button") }}
+			</form>
+		</div>
+
+	</div>
+</div>
+{% endblock %}
+
+
+
+

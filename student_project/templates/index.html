@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 align="center" style="color: black">List of all our students</h1>
+<div class="container">
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>
+                Full Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone number
+            </th>
+            <th>
+                Photo
+            </th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td> {{ student.full_name }} </td>
+            <td> {{ student.email }} </td>
+            <td> {{ student.phone_number }} </td>
+             <td><img align="center" class="rounded-circle" src="{{ url_for('static', filename='images/' + student.profile_pic) }}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+
+
+{% endblock %}
